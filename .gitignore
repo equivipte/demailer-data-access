@@ -14,3 +14,9 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+target/classes/demailer_web_db.properties
+target/classes/log4j.xml
+target/classes/META-INF/demailer-web-data-access.xml
+target/classes/META-INF/MANIFEST.MF
+target/classes/META-INF/maven/com.equivi.demailer/demailer-data-access/pom.properties
+target/classes/META-INF/maven/com.equivi.demailer/demailer-data-access/pom.xml
