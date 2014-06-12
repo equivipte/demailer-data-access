@@ -39,8 +39,8 @@
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>/opt/demailer/conf/demailer_web_db.properties</value>
-                <value>/opt/demailer/conf/email_setup.properties</value>
+                <value>file:/opt/demailer/conf/demailer_web_db.properties</value>
+                <value>file:/opt/demailer/conf/email_setup.properties</value>
             </list>
         </property>
     </bean>
