@@ -1,4 +1,4 @@
-package com.equivi.demailer.data;
+package com.equivi.mailsy.data;
 
 
 import org.springframework.data.domain.PageRequest;
