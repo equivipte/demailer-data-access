@@ -16,13 +16,42 @@ public class CampaignEntity extends AuditableEntity {
     @Column(name = "sender_name" ,length = 100)
     private String senderName;
 
-    @Column(name = "sender_name" ,length = 100)
+    @Column(name = "sender_email" ,length = 255)
     private String senderEmail;
 
     @Column(name = "campaign_status")
     private CampaignStatus campaignStatus;
 
 
+    public String getEmaiSubject() {
+        return emaiSubject;
+    }
 
+    public void setEmaiSubject(String emaiSubject) {
+        this.emaiSubject = emaiSubject;
+    }
 
+    public String getSenderName() {
+        return senderName;
+    }
+
+    public void setSenderName(String senderName) {
+        this.senderName = senderName;
+    }
+
+    public String getSenderEmail() {
+        return senderEmail;
+    }
+
+    public void setSenderEmail(String senderEmail) {
+        this.senderEmail = senderEmail;
+    }
+
+    public CampaignStatus getCampaignStatus() {
+        return campaignStatus;
+    }
+
+    public void setCampaignStatus(CampaignStatus campaignStatus) {
+        this.campaignStatus = campaignStatus;
+    }
 }
