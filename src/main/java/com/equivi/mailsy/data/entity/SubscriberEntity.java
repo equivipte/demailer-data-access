@@ -3,6 +3,7 @@ package com.equivi.mailsy.data.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -42,6 +43,7 @@ public class SubscriberEntity extends AuditableEntity {
     private SubscribeStatus subscribeStatus;
 
     @ManyToOne
+    @JoinColumn(name = "subscribe_id")
     private SubscriberGroupEntity subscriberGroupEntity;
 
     public String getEmailAddress() {

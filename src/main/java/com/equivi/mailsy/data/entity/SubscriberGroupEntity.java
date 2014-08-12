@@ -2,6 +2,7 @@ package com.equivi.mailsy.data.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -16,7 +17,7 @@ public class SubscriberGroupEntity extends AuditableEntity {
     @Column(name = "group_name", length = 255)
     private String groupName;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "subscribe_id")
     private List<SubscriberEntity> subscribeEntityList;
 
