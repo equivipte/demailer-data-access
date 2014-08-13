@@ -3,13 +3,11 @@ package com.equivi.mailsy.data.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "ts02_subscriber")
-public class SubscriberEntity extends AuditableEntity {
+public class ContactEntity extends AuditableEntity {
     private static final long serialVersionUID = 5741045255023992138L;
 
     @Column(name = "emailAddress")
@@ -23,6 +21,15 @@ public class SubscriberEntity extends AuditableEntity {
 
     @Column(name = "companyName")
     private String companyName;
+
+    @Column(name = "address1")
+    private String address1;
+
+    @Column(name = "address2")
+    private String address2;
+
+    @Column(name = "address3")
+    private String address3;
 
     @Column(name = "country")
     private String country;
@@ -39,12 +46,17 @@ public class SubscriberEntity extends AuditableEntity {
     @Column(name = "domainName")
     private String domainName;
 
+    @Column(name = "facebookAccount")
+    private String facebookAccount;
+
+    @Column(name = "twitterAccount")
+    private String twitterAccount;
+
+    @Column(name = "pathAccount")
+    private String pathAccount;
+
     @Column(name = "subscribeStatus")
     private SubscribeStatus subscribeStatus;
-
-    @ManyToOne
-    @JoinColumn(name = "subscribe_id")
-    private SubscriberGroupEntity subscriberGroupEntity;
 
     public String getEmailAddress() {
         return emailAddress;
@@ -68,15 +80,6 @@ public class SubscriberEntity extends AuditableEntity {
 
     public void setDomainName(String domainName) {
         this.domainName = domainName;
-    }
-
-
-    public SubscriberGroupEntity getSubscriberGroupEntity() {
-        return subscriberGroupEntity;
-    }
-
-    public void setSubscriberGroupEntity(SubscriberGroupEntity subscriberGroupEntity) {
-        this.subscriberGroupEntity = subscriberGroupEntity;
     }
 
     public String getFirstName() {
@@ -133,5 +136,53 @@ public class SubscriberEntity extends AuditableEntity {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public String getAddress1() {
+        return address1;
+    }
+
+    public void setAddress1(String address1) {
+        this.address1 = address1;
+    }
+
+    public String getAddress2() {
+        return address2;
+    }
+
+    public void setAddress2(String address2) {
+        this.address2 = address2;
+    }
+
+    public String getAddress3() {
+        return address3;
+    }
+
+    public void setAddress3(String address3) {
+        this.address3 = address3;
+    }
+
+    public String getFacebookAccount() {
+        return facebookAccount;
+    }
+
+    public void setFacebookAccount(String facebookAccount) {
+        this.facebookAccount = facebookAccount;
+    }
+
+    public String getTwitterAccount() {
+        return twitterAccount;
+    }
+
+    public void setTwitterAccount(String twitterAccount) {
+        this.twitterAccount = twitterAccount;
+    }
+
+    public String getPathAccount() {
+        return pathAccount;
+    }
+
+    public void setPathAccount(String pathAccount) {
+        this.pathAccount = pathAccount;
     }
 }

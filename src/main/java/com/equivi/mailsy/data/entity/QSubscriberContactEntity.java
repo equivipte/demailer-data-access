@@ -11,24 +11,20 @@ import com.mysema.query.types.path.PathInits;
 
 
 /**
- * QSubscriberEntity is a Querydsl query type for SubscriberEntity
+ * QSubscriberContactEntity is a Querydsl query type for SubscriberContactEntity
  */
 @Generated("com.mysema.query.codegen.EntitySerializer")
-public class QSubscriberEntity extends EntityPathBase<SubscriberEntity> {
+public class QSubscriberContactEntity extends EntityPathBase<SubscriberContactEntity> {
 
-    private static final long serialVersionUID = -1636886027L;
+    private static final long serialVersionUID = 821136849L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 
-    public static final QSubscriberEntity subscriberEntity = new QSubscriberEntity("subscriberEntity");
+    public static final QSubscriberContactEntity subscriberContactEntity = new QSubscriberContactEntity("subscriberContactEntity");
 
     public final QAuditableEntity _super = new QAuditableEntity(this);
 
-    public final StringPath city = createString("city");
-
-    public final StringPath companyName = createString("companyName");
-
-    public final StringPath country = createString("country");
+    public final QContactEntity contactEntity;
 
     //inherited
     public final NumberPath<Long> createdBy = _super.createdBy;
@@ -36,16 +32,8 @@ public class QSubscriberEntity extends EntityPathBase<SubscriberEntity> {
     //inherited
     public final DateTimePath<java.util.Date> createdDateTime = _super.createdDateTime;
 
-    public final StringPath domainName = createString("domainName");
-
-    public final StringPath emailAddress = createString("emailAddress");
-
-    public final StringPath firstName = createString("firstName");
-
     //inherited
     public final NumberPath<Long> id = _super.id;
-
-    public final StringPath lastName = createString("lastName");
 
     //inherited
     public final NumberPath<Long> lastUpdatedBy = _super.lastUpdatedBy;
@@ -53,35 +41,30 @@ public class QSubscriberEntity extends EntityPathBase<SubscriberEntity> {
     //inherited
     public final DateTimePath<java.util.Date> lastUpdatedDateTime = _super.lastUpdatedDateTime;
 
-    public final StringPath phone = createString("phone");
-
     public final QSubscriberGroupEntity subscriberGroupEntity;
-
-    public final EnumPath<SubscribeStatus> subscribeStatus = createEnum("subscribeStatus", SubscribeStatus.class);
 
     //inherited
     public final NumberPath<Long> version = _super.version;
 
-    public final StringPath zipCode = createString("zipCode");
-
-    public QSubscriberEntity(String variable) {
-        this(SubscriberEntity.class, forVariable(variable), INITS);
+    public QSubscriberContactEntity(String variable) {
+        this(SubscriberContactEntity.class, forVariable(variable), INITS);
     }
 
-    public QSubscriberEntity(Path<? extends SubscriberEntity> path) {
+    public QSubscriberContactEntity(Path<? extends SubscriberContactEntity> path) {
         this(path.getType(), path.getMetadata(), path.getMetadata().isRoot() ? INITS : PathInits.DEFAULT);
     }
 
-    public QSubscriberEntity(PathMetadata<?> metadata) {
+    public QSubscriberContactEntity(PathMetadata<?> metadata) {
         this(metadata, metadata.isRoot() ? INITS : PathInits.DEFAULT);
     }
 
-    public QSubscriberEntity(PathMetadata<?> metadata, PathInits inits) {
-        this(SubscriberEntity.class, metadata, inits);
+    public QSubscriberContactEntity(PathMetadata<?> metadata, PathInits inits) {
+        this(SubscriberContactEntity.class, metadata, inits);
     }
 
-    public QSubscriberEntity(Class<? extends SubscriberEntity> type, PathMetadata<?> metadata, PathInits inits) {
+    public QSubscriberContactEntity(Class<? extends SubscriberContactEntity> type, PathMetadata<?> metadata, PathInits inits) {
         super(type, metadata, inits);
+        this.contactEntity = inits.isInitialized("contactEntity") ? new QContactEntity(forProperty("contactEntity")) : null;
         this.subscriberGroupEntity = inits.isInitialized("subscriberGroupEntity") ? new QSubscriberGroupEntity(forProperty("subscriberGroupEntity")) : null;
     }
 
