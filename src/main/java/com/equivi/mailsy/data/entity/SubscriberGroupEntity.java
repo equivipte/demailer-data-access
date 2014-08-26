@@ -19,7 +19,7 @@ public class SubscriberGroupEntity extends AuditableEntity {
 
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "subscribe_id")
-    private List<ContactEntity> subscribeEntityList;
+    private List<SubscriberContactEntity> subscribeContactEntityList;
 
     @Column(name = "status", length = 2)
     private GenericStatus status;
@@ -32,12 +32,12 @@ public class SubscriberGroupEntity extends AuditableEntity {
         this.groupName = groupName;
     }
 
-    public List<ContactEntity> getSubscribeEntityList() {
-        return subscribeEntityList;
+    public List<SubscriberContactEntity> getSubscribeContactEntityList() {
+        return subscribeContactEntityList;
     }
 
-    public void setSubscribeEntityList(List<ContactEntity> subscribeEntityList) {
-        this.subscribeEntityList = subscribeEntityList;
+    public void setSubscribeContactEntityList(List<SubscriberContactEntity> subscribeContactEntityList) {
+        this.subscribeContactEntityList = subscribeContactEntityList;
     }
 
     public GenericStatus getStatus() {
