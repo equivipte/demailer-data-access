@@ -3,7 +3,11 @@ package com.equivi.mailsy.data.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Table(name = "cm01_campaign")
@@ -13,14 +17,15 @@ public class CampaignEntity extends AuditableEntity {
     @Column(name = "email_subject", length = 100)
     private String emaiSubject;
 
-    @Column(name = "sender_name", length = 100)
-    private String senderName;
+    @Column(name = "email_content", length = 500)
+    private String emailContent;
 
-    @Column(name = "sender_email", length = 100)
-    private String senderEmail;
+    @Column(name = "scheduled_send_date")
+    private Date scheduledSendDate;
 
-    @Column(name = "campaign_status")
-    private CampaignStatus campaignStatus;
+    @OneToOne
+    @JoinColumn(name = "subscriber_group_id")
+    private SubscriberGroupEntity subscriberGroupEntity;
 
 
     public String getEmaiSubject() {
@@ -31,27 +36,27 @@ public class CampaignEntity extends AuditableEntity {
         this.emaiSubject = emaiSubject;
     }
 
-    public String getSenderName() {
-        return senderName;
+    public String getEmailContent() {
+        return emailContent;
     }
 
-    public void setSenderName(String senderName) {
-        this.senderName = senderName;
+    public void setEmailContent(String emailContent) {
+        this.emailContent = emailContent;
     }
 
-    public String getSenderEmail() {
-        return senderEmail;
+    public Date getScheduledSendDate() {
+        return scheduledSendDate;
     }
 
-    public void setSenderEmail(String senderEmail) {
-        this.senderEmail = senderEmail;
+    public void setScheduledSendDate(Date scheduledSendDate) {
+        this.scheduledSendDate = scheduledSendDate;
     }
 
-    public CampaignStatus getCampaignStatus() {
-        return campaignStatus;
+    public SubscriberGroupEntity getSubscriberGroupEntity() {
+        return subscriberGroupEntity;
     }
 
-    public void setCampaignStatus(CampaignStatus campaignStatus) {
-        this.campaignStatus = campaignStatus;
+    public void setSubscriberGroupEntity(SubscriberGroupEntity subscriberGroupEntity) {
+        this.subscriberGroupEntity = subscriberGroupEntity;
     }
 }

@@ -10,16 +10,16 @@ import javax.persistence.Table;
 public class ContactEntity extends AuditableEntity {
     private static final long serialVersionUID = 5741045255023992138L;
 
-    @Column(name = "emailAddress")
+    @Column(name = "email_address")
     private String emailAddress;
 
-    @Column(name = "firstName")
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "companyName")
+    @Column(name = "company_name")
     private String companyName;
 
     @Column(name = "address1")
@@ -40,22 +40,22 @@ public class ContactEntity extends AuditableEntity {
     @Column(name = "phone")
     private String phone;
 
-    @Column(name = "zipCode")
+    @Column(name = "zip_code")
     private String zipCode;
 
-    @Column(name = "domainName")
+    @Column(name = "domain_name")
     private String domainName;
 
-    @Column(name = "facebookAccount")
+    @Column(name = "facebook_account")
     private String facebookAccount;
 
-    @Column(name = "twitterAccount")
+    @Column(name = "twitter_account")
     private String twitterAccount;
 
-    @Column(name = "pathAccount")
+    @Column(name = "path_account")
     private String pathAccount;
 
-    @Column(name = "subscribeStatus")
+    @Column(name = "subscriber_status")
     private SubscribeStatus subscribeStatus;
 
     public String getEmailAddress() {
