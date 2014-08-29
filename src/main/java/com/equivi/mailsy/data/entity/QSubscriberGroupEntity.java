@@ -41,7 +41,7 @@ public class QSubscriberGroupEntity extends EntityPathBase<SubscriberGroupEntity
 
     public final EnumPath<GenericStatus> status = createEnum("status", GenericStatus.class);
 
-    public final ListPath<ContactEntity, QContactEntity> subscribeEntityList = this.<ContactEntity, QContactEntity>createList("subscribeEntityList", ContactEntity.class, QContactEntity.class, PathInits.DIRECT2);
+    public final ListPath<SubscriberContactEntity, QSubscriberContactEntity> subscribeContactEntityList = this.<SubscriberContactEntity, QSubscriberContactEntity>createList("subscribeContactEntityList", SubscriberContactEntity.class, QSubscriberContactEntity.class, PathInits.DIRECT2);
 
     //inherited
     public final NumberPath<Long> version = _super.version;
