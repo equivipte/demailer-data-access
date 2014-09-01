@@ -4,7 +4,6 @@ package com.equivi.mailsy.data.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.util.Date;
@@ -19,6 +18,9 @@ public class CampaignEntity extends AuditableEntity {
 
     @Column(name = "email_content", length = 500)
     private String emailContent;
+
+    @Column(name = "campaign_status", length = 1)
+    private CampaignStatus campaignStatus;
 
     @Column(name = "scheduled_send_date")
     private Date scheduledSendDate;
@@ -58,5 +60,13 @@ public class CampaignEntity extends AuditableEntity {
 
     public void setSubscriberGroupEntity(SubscriberGroupEntity subscriberGroupEntity) {
         this.subscriberGroupEntity = subscriberGroupEntity;
+    }
+
+    public CampaignStatus getCampaignStatus() {
+        return campaignStatus;
+    }
+
+    public void setCampaignStatus(CampaignStatus campaignStatus) {
+        this.campaignStatus = campaignStatus;
     }
 }
