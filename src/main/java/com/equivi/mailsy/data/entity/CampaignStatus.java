@@ -18,4 +18,20 @@ public enum CampaignStatus {
     public String toString() {
         return super.toString();
     }
+
+    public Integer getCampaignStatusId() {
+        return campaignStatusId;
+    }
+
+    public void setCampaignStatusId(Integer campaignStatusId) {
+        this.campaignStatusId = campaignStatusId;
+    }
+
+    public String getCampaignStatusDescription() {
+        return campaignStatusDescription;
+    }
+
+    public void setCampaignStatusDescription(String campaignStatusDescription) {
+        this.campaignStatusDescription = campaignStatusDescription;
+    }
 }

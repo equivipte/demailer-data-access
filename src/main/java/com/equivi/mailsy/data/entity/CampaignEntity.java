@@ -13,6 +13,9 @@ import java.util.Date;
 public class CampaignEntity extends AuditableEntity {
     private static final long serialVersionUID = 3147431369479751792L;
 
+    @Column(name = "campaign_name", length = 100)
+    private String campaignName;
+
     @Column(name = "email_subject", length = 100)
     private String emaiSubject;
 
@@ -29,6 +32,14 @@ public class CampaignEntity extends AuditableEntity {
     @JoinColumn(name = "subscriber_group_id")
     private SubscriberGroupEntity subscriberGroupEntity;
 
+
+    public String getCampaignName() {
+        return campaignName;
+    }
+
+    public void setCampaignName(String campaignName) {
+        this.campaignName = campaignName;
+    }
 
     public String getEmaiSubject() {
         return emaiSubject;
