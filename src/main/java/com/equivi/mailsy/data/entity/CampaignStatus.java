@@ -34,4 +34,22 @@ public enum CampaignStatus {
     public void setCampaignStatusDescription(String campaignStatusDescription) {
         this.campaignStatusDescription = campaignStatusDescription;
     }
+
+    public static CampaignStatus getStatusById(final Integer statusId) {
+        for (CampaignStatus campaignStatus : CampaignStatus.values()) {
+            if (campaignStatus.getCampaignStatusId().equals(statusId)) {
+                return campaignStatus;
+            }
+        }
+        return null;
+    }
+
+    public static CampaignStatus getStatusByDescription(final String statusDescription) {
+        for (CampaignStatus campaignStatus : CampaignStatus.values()) {
+            if (campaignStatus.getCampaignStatusDescription().equals(statusDescription)) {
+                return campaignStatus;
+            }
+        }
+        return null;
+    }
 }

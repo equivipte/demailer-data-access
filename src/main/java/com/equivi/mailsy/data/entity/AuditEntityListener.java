@@ -13,7 +13,7 @@ public class AuditEntityListener {
 
         //auditableEntity.setCreatedBy(UserContext.get().getUserId());
         auditableEntity.setCreatedDateTime(new DateTime().toDate());
-
+        auditableEntity.setLastUpdatedDateTime(new DateTime().toDate());
     }
 
     @PreUpdate

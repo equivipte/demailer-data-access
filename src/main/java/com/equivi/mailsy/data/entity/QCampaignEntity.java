@@ -24,6 +24,10 @@ public class QCampaignEntity extends EntityPathBase<CampaignEntity> {
 
     public final QAuditableEntity _super = new QAuditableEntity(this);
 
+    public final StringPath campaignName = createString("campaignName");
+
+    public final EnumPath<CampaignStatus> campaignStatus = createEnum("campaignStatus", CampaignStatus.class);
+
     //inherited
     public final NumberPath<Long> createdBy = _super.createdBy;
 
