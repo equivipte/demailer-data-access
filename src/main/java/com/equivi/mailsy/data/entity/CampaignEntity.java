@@ -3,10 +3,12 @@ package com.equivi.mailsy.data.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "cm01_campaign")
@@ -28,9 +30,9 @@ public class CampaignEntity extends AuditableEntity {
     @Column(name = "scheduled_send_date")
     private Date scheduledSendDate;
 
-    @OneToOne
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "subscriber_group_id")
-    private SubscriberGroupEntity subscriberGroupEntity;
+    private List<CampaignSubscriberGroupEntity> campaignSubscriberGroupEntities;
 
 
     public String getCampaignName() {
@@ -65,12 +67,12 @@ public class CampaignEntity extends AuditableEntity {
         this.scheduledSendDate = scheduledSendDate;
     }
 
-    public SubscriberGroupEntity getSubscriberGroupEntity() {
-        return subscriberGroupEntity;
+    public List<CampaignSubscriberGroupEntity> getCampaignSubscriberGroupEntities() {
+        return campaignSubscriberGroupEntities;
     }
 
-    public void setSubscriberGroupEntity(SubscriberGroupEntity subscriberGroupEntity) {
-        this.subscriberGroupEntity = subscriberGroupEntity;
+    public void setCampaignSubscriberGroupEntities(List<CampaignSubscriberGroupEntity> campaignSubscriberGroupEntities) {
+        this.campaignSubscriberGroupEntities = campaignSubscriberGroupEntities;
     }
 
     public CampaignStatus getCampaignStatus() {
