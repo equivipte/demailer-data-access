@@ -74,7 +74,7 @@ public class QCampaignTrackerEntity extends EntityPathBase<CampaignTrackerEntity
 
     public QCampaignTrackerEntity(Class<? extends CampaignTrackerEntity> type, PathMetadata<?> metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.campaignEntity = inits.isInitialized("campaignEntity") ? new QCampaignEntity(forProperty("campaignEntity"), inits.get("campaignEntity")) : null;
+        this.campaignEntity = inits.isInitialized("campaignEntity") ? new QCampaignEntity(forProperty("campaignEntity")) : null;
         this.contactEntity = inits.isInitialized("contactEntity") ? new QContactEntity(forProperty("contactEntity")) : null;
     }
 

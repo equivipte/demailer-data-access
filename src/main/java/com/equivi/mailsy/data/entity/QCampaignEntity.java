@@ -18,8 +18,6 @@ public class QCampaignEntity extends EntityPathBase<CampaignEntity> {
 
     private static final long serialVersionUID = -2084205795L;
 
-    private static final PathInits INITS = PathInits.DIRECT2;
-
     public static final QCampaignEntity campaignEntity = new QCampaignEntity("campaignEntity");
 
     public final QAuditableEntity _super = new QAuditableEntity(this);
@@ -27,6 +25,8 @@ public class QCampaignEntity extends EntityPathBase<CampaignEntity> {
     public final StringPath campaignName = createString("campaignName");
 
     public final EnumPath<CampaignStatus> campaignStatus = createEnum("campaignStatus", CampaignStatus.class);
+
+    public final ListPath<CampaignSubscriberGroupEntity, QCampaignSubscriberGroupEntity> campaignSubscriberGroupEntities = this.<CampaignSubscriberGroupEntity, QCampaignSubscriberGroupEntity>createList("campaignSubscriberGroupEntities", CampaignSubscriberGroupEntity.class, QCampaignSubscriberGroupEntity.class, PathInits.DIRECT2);
 
     //inherited
     public final NumberPath<Long> createdBy = _super.createdBy;
@@ -49,30 +49,19 @@ public class QCampaignEntity extends EntityPathBase<CampaignEntity> {
 
     public final DateTimePath<java.util.Date> scheduledSendDate = createDateTime("scheduledSendDate", java.util.Date.class);
 
-    public final QSubscriberGroupEntity subscriberGroupEntity;
-
     //inherited
     public final NumberPath<Long> version = _super.version;
 
     public QCampaignEntity(String variable) {
-        this(CampaignEntity.class, forVariable(variable), INITS);
+        super(CampaignEntity.class, forVariable(variable));
     }
 
     public QCampaignEntity(Path<? extends CampaignEntity> path) {
-        this(path.getType(), path.getMetadata(), path.getMetadata().isRoot() ? INITS : PathInits.DEFAULT);
+        super(path.getType(), path.getMetadata());
     }
 
     public QCampaignEntity(PathMetadata<?> metadata) {
-        this(metadata, metadata.isRoot() ? INITS : PathInits.DEFAULT);
-    }
-
-    public QCampaignEntity(PathMetadata<?> metadata, PathInits inits) {
-        this(CampaignEntity.class, metadata, inits);
-    }
-
-    public QCampaignEntity(Class<? extends CampaignEntity> type, PathMetadata<?> metadata, PathInits inits) {
-        super(type, metadata, inits);
-        this.subscriberGroupEntity = inits.isInitialized("subscriberGroupEntity") ? new QSubscriberGroupEntity(forProperty("subscriberGroupEntity")) : null;
+        super(CampaignEntity.class, metadata);
     }
 
 }

@@ -3,7 +3,8 @@ package com.equivi.mailsy.data.entity;
 public enum CampaignStatus {
 
     DRAFT(0, "DRAFT"),
-    SEND(1, "SEND");
+    OUTBOX(1, "OUTBOX"),
+    SEND(2, "SEND");
 
     private Integer campaignStatusId;
 

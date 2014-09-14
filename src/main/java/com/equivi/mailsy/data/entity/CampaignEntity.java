@@ -15,6 +15,10 @@ import java.util.List;
 public class CampaignEntity extends AuditableEntity {
     private static final long serialVersionUID = 3147431369479751792L;
 
+    //This uuid as identifier at external party such as mailgun
+    @Column(name = "campaign_uuid", length = 50, columnDefinition = "This uuid as identifier for external party such as mailgun")
+    private String campaignUUID;
+
     @Column(name = "campaign_name", length = 100)
     private String campaignName;
 
@@ -34,6 +38,14 @@ public class CampaignEntity extends AuditableEntity {
     @JoinColumn(name = "subscriber_group_id")
     private List<CampaignSubscriberGroupEntity> campaignSubscriberGroupEntities;
 
+
+    public String getCampaignUUID() {
+        return campaignUUID;
+    }
+
+    public void setCampaignUUID(String campaignUUID) {
+        this.campaignUUID = campaignUUID;
+    }
 
     public String getCampaignName() {
         return campaignName;
