@@ -7,7 +7,6 @@ import com.mysema.query.types.path.*;
 import com.mysema.query.types.PathMetadata;
 import javax.annotation.Generated;
 import com.mysema.query.types.Path;
-import com.mysema.query.types.path.PathInits;
 
 
 /**
@@ -18,27 +17,47 @@ public class QCampaignTrackerEntity extends EntityPathBase<CampaignTrackerEntity
 
     private static final long serialVersionUID = -1262092095L;
 
-    private static final PathInits INITS = PathInits.DIRECT2;
-
     public static final QCampaignTrackerEntity campaignTrackerEntity = new QCampaignTrackerEntity("campaignTrackerEntity");
 
     public final QAuditableEntity _super = new QAuditableEntity(this);
 
+    public final BooleanPath bounced = createBoolean("bounced");
+
     public final DateTimePath<java.util.Date> bouncedDate = createDateTime("bouncedDate", java.util.Date.class);
 
-    public final EnumPath<CampaignDeliveryStatus> campaignDeliveryStatus = createEnum("campaignDeliveryStatus", CampaignDeliveryStatus.class);
+    public final NumberPath<Long> campaignId = createNumber("campaignId", Long.class);
 
-    public final QCampaignEntity campaignEntity;
+    public final StringPath campaignMailerMessageId = createString("campaignMailerMessageId");
+
+    public final BooleanPath clicked = createBoolean("clicked");
 
     public final DateTimePath<java.util.Date> clickedDate = createDateTime("clickedDate", java.util.Date.class);
 
-    public final QContactEntity contactEntity;
+    public final StringPath clientDeviceName = createString("clientDeviceName");
+
+    public final StringPath clientDeviceType = createString("clientDeviceType");
+
+    public final StringPath clientOs = createString("clientOs");
+
+    public final StringPath clientType = createString("clientType");
+
+    public final StringPath clientUserAgent = createString("clientUserAgent");
+
+    public final StringPath content = createString("content");
 
     //inherited
     public final NumberPath<Long> createdBy = _super.createdBy;
 
     //inherited
     public final DateTimePath<java.util.Date> createdDateTime = _super.createdDateTime;
+
+    public final BooleanPath delivered = createBoolean("delivered");
+
+    public final StringPath geoLocationCity = createString("geoLocationCity");
+
+    public final StringPath geoLocationCountry = createString("geoLocationCountry");
+
+    public final StringPath geoLocationRegion = createString("geoLocationRegion");
 
     //inherited
     public final NumberPath<Long> id = _super.id;
@@ -51,31 +70,23 @@ public class QCampaignTrackerEntity extends EntityPathBase<CampaignTrackerEntity
 
     public final DateTimePath<java.util.Date> openDate = createDateTime("openDate", java.util.Date.class);
 
-    public final DateTimePath<java.util.Date> sendDate = createDateTime("sendDate", java.util.Date.class);
+    public final BooleanPath opened = createBoolean("opened");
+
+    public final StringPath recipient = createString("recipient");
 
     //inherited
     public final NumberPath<Long> version = _super.version;
 
     public QCampaignTrackerEntity(String variable) {
-        this(CampaignTrackerEntity.class, forVariable(variable), INITS);
+        super(CampaignTrackerEntity.class, forVariable(variable));
     }
 
     public QCampaignTrackerEntity(Path<? extends CampaignTrackerEntity> path) {
-        this(path.getType(), path.getMetadata(), path.getMetadata().isRoot() ? INITS : PathInits.DEFAULT);
+        super(path.getType(), path.getMetadata());
     }
 
     public QCampaignTrackerEntity(PathMetadata<?> metadata) {
-        this(metadata, metadata.isRoot() ? INITS : PathInits.DEFAULT);
-    }
-
-    public QCampaignTrackerEntity(PathMetadata<?> metadata, PathInits inits) {
-        this(CampaignTrackerEntity.class, metadata, inits);
-    }
-
-    public QCampaignTrackerEntity(Class<? extends CampaignTrackerEntity> type, PathMetadata<?> metadata, PathInits inits) {
-        super(type, metadata, inits);
-        this.campaignEntity = inits.isInitialized("campaignEntity") ? new QCampaignEntity(forProperty("campaignEntity")) : null;
-        this.contactEntity = inits.isInitialized("contactEntity") ? new QContactEntity(forProperty("contactEntity")) : null;
+        super(CampaignTrackerEntity.class, metadata);
     }
 
 }

@@ -16,14 +16,17 @@ public class CampaignEntity extends AuditableEntity {
     private static final long serialVersionUID = 3147431369479751792L;
 
     //This uuid as identifier at external party such as mailgun
-    @Column(name = "campaign_uuid", length = 50, columnDefinition = "This uuid as identifier for external party such as mailgun")
+    @Column(name = "campaign_uuid", length = 50)
     private String campaignUUID;
 
     @Column(name = "campaign_name", length = 100)
     private String campaignName;
 
+    @Column(name = "email_from", length = 50)
+    private String emailFrom;
+
     @Column(name = "email_subject", length = 100)
-    private String emaiSubject;
+    private String emailSubject;
 
     @Column(name = "email_content", length = 500)
     private String emailContent;
@@ -55,12 +58,12 @@ public class CampaignEntity extends AuditableEntity {
         this.campaignName = campaignName;
     }
 
-    public String getEmaiSubject() {
-        return emaiSubject;
+    public String getEmailSubject() {
+        return emailSubject;
     }
 
-    public void setEmaiSubject(String emaiSubject) {
-        this.emaiSubject = emaiSubject;
+    public void setEmailSubject(String emailSubject) {
+        this.emailSubject = emailSubject;
     }
 
     public String getEmailContent() {
@@ -93,5 +96,14 @@ public class CampaignEntity extends AuditableEntity {
 
     public void setCampaignStatus(CampaignStatus campaignStatus) {
         this.campaignStatus = campaignStatus;
+    }
+
+
+    public String getEmailFrom() {
+        return emailFrom;
+    }
+
+    public void setEmailFrom(String emailFrom) {
+        this.emailFrom = emailFrom;
     }
 }

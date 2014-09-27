@@ -28,6 +28,8 @@ public class QCampaignEntity extends EntityPathBase<CampaignEntity> {
 
     public final ListPath<CampaignSubscriberGroupEntity, QCampaignSubscriberGroupEntity> campaignSubscriberGroupEntities = this.<CampaignSubscriberGroupEntity, QCampaignSubscriberGroupEntity>createList("campaignSubscriberGroupEntities", CampaignSubscriberGroupEntity.class, QCampaignSubscriberGroupEntity.class, PathInits.DIRECT2);
 
+    public final StringPath campaignUUID = createString("campaignUUID");
+
     //inherited
     public final NumberPath<Long> createdBy = _super.createdBy;
 
@@ -35,6 +37,8 @@ public class QCampaignEntity extends EntityPathBase<CampaignEntity> {
     public final DateTimePath<java.util.Date> createdDateTime = _super.createdDateTime;
 
     public final StringPath emailContent = createString("emailContent");
+
+    public final StringPath emailFrom = createString("emailFrom");
 
     public final StringPath emaiSubject = createString("emaiSubject");
 
