@@ -18,9 +18,6 @@ public class CampaignTrackerEntity extends AuditableEntity {
     @Column(name = "campaign_id")
     private Long campaignId;
 
-    @Column(name = "content")
-    private String content;
-
     @Column(name = "recipient")
     private String recipient;
 
@@ -60,6 +57,9 @@ public class CampaignTrackerEntity extends AuditableEntity {
     @Column(name = "geo_location_country")
     private String geoLocationCountry;
 
+    @Column(name = "deliver_date")
+    private Date deliverDate;
+
     @Column(name = "open_date")
     private Date openDate;
 
@@ -85,12 +85,12 @@ public class CampaignTrackerEntity extends AuditableEntity {
         this.campaignId = campaignId;
     }
 
-    public String getContent() {
-        return content;
+    public Date getDeliverDate() {
+        return deliverDate;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setDeliverDate(Date deliverDate) {
+        this.deliverDate = deliverDate;
     }
 
     public String getRecipient() {

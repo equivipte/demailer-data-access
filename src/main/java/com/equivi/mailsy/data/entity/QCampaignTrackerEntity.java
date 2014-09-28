@@ -43,13 +43,13 @@ public class QCampaignTrackerEntity extends EntityPathBase<CampaignTrackerEntity
 
     public final StringPath clientUserAgent = createString("clientUserAgent");
 
-    public final StringPath content = createString("content");
-
     //inherited
     public final NumberPath<Long> createdBy = _super.createdBy;
 
     //inherited
     public final DateTimePath<java.util.Date> createdDateTime = _super.createdDateTime;
+
+    public final DateTimePath<java.util.Date> deliverDate = createDateTime("deliverDate", java.util.Date.class);
 
     public final BooleanPath delivered = createBoolean("delivered");
 

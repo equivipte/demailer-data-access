@@ -31,6 +31,8 @@ public class QQueueCampaignMailerEntity extends EntityPathBase<QueueCampaignMail
     //inherited
     public final DateTimePath<java.util.Date> createdDateTime = _super.createdDateTime;
 
+    public final StringPath emailFrom = createString("emailFrom");
+
     //inherited
     public final NumberPath<Long> id = _super.id;
 
@@ -45,6 +47,8 @@ public class QQueueCampaignMailerEntity extends EntityPathBase<QueueCampaignMail
     public final StringPath recipient = createString("recipient");
 
     public final DateTimePath<java.util.Date> scheduledSendDate = createDateTime("scheduledSendDate", java.util.Date.class);
+
+    public final StringPath subject = createString("subject");
 
     //inherited
     public final NumberPath<Long> version = _super.version;

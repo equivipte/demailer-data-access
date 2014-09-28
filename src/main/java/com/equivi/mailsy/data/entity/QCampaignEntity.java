@@ -40,7 +40,7 @@ public class QCampaignEntity extends EntityPathBase<CampaignEntity> {
 
     public final StringPath emailFrom = createString("emailFrom");
 
-    public final StringPath emaiSubject = createString("emaiSubject");
+    public final StringPath emailSubject = createString("emailSubject");
 
     //inherited
     public final NumberPath<Long> id = _super.id;
