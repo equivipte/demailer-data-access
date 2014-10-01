@@ -48,6 +48,9 @@ public class CampaignTrackerEntity extends AuditableEntity {
     @Column(name = "bounced")
     private boolean bounced;
 
+    @Column(name = "unsubscribed")
+    private boolean unsubscribed;
+
     @Column(name = "geo_location_city")
     private String geoLocationCity;
 
@@ -68,6 +71,9 @@ public class CampaignTrackerEntity extends AuditableEntity {
 
     @Column(name = "bounced_date")
     private Date bouncedDate;
+
+    @Column(name = "unsubscribed_date")
+    private Date unsubscribedDate;
 
     public String getCampaignMailerMessageId() {
         return campaignMailerMessageId;
@@ -219,5 +225,21 @@ public class CampaignTrackerEntity extends AuditableEntity {
 
     public void setDelivered(boolean delivered) {
         this.delivered = delivered;
+    }
+
+    public boolean isUnsubscribed() {
+        return unsubscribed;
+    }
+
+    public void setUnsubscribed(boolean unsubscribed) {
+        this.unsubscribed = unsubscribed;
+    }
+
+    public Date getUnsubscribedDate() {
+        return unsubscribedDate;
+    }
+
+    public void setUnsubscribedDate(Date unsubscribedDate) {
+        this.unsubscribedDate = unsubscribedDate;
     }
 }
