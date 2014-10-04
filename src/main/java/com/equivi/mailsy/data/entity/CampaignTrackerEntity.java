@@ -3,14 +3,23 @@ package com.equivi.mailsy.data.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.util.Date;
 
 @Entity
 @Table(name = "cm02_campaign_tracker")
-public class CampaignTrackerEntity extends AuditableEntity {
+public class CampaignTrackerEntity {
 
     private static final long serialVersionUID = 6437425850178204238L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @Column(name = "campaign_mailer_message_id")
     private String campaignMailerMessageId;
@@ -74,6 +83,20 @@ public class CampaignTrackerEntity extends AuditableEntity {
 
     @Column(name = "unsubscribed_date")
     private Date unsubscribedDate;
+
+    @Column(name = "created_by")
+    private Long createdBy;
+
+    @Column(name = "created_date_time")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDateTime;
+
+    @Column(name = "last_updated_by")
+    private Long lastUpdatedBy;
+
+    @Column(name = "last_updated_date_time")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastUpdatedDateTime;
 
     public String getCampaignMailerMessageId() {
         return campaignMailerMessageId;
@@ -241,5 +264,45 @@ public class CampaignTrackerEntity extends AuditableEntity {
 
     public void setUnsubscribedDate(Date unsubscribedDate) {
         this.unsubscribedDate = unsubscribedDate;
+    }
+
+    public Long getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(Long createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public Date getCreatedDateTime() {
+        return createdDateTime;
+    }
+
+    public void setCreatedDateTime(Date createdDateTime) {
+        this.createdDateTime = createdDateTime;
+    }
+
+    public Long getLastUpdatedBy() {
+        return lastUpdatedBy;
+    }
+
+    public void setLastUpdatedBy(Long lastUpdatedBy) {
+        this.lastUpdatedBy = lastUpdatedBy;
+    }
+
+    public Date getLastUpdatedDateTime() {
+        return lastUpdatedDateTime;
+    }
+
+    public void setLastUpdatedDateTime(Date lastUpdatedDateTime) {
+        this.lastUpdatedDateTime = lastUpdatedDateTime;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

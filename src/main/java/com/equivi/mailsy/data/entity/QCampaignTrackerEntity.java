@@ -19,8 +19,6 @@ public class QCampaignTrackerEntity extends EntityPathBase<CampaignTrackerEntity
 
     public static final QCampaignTrackerEntity campaignTrackerEntity = new QCampaignTrackerEntity("campaignTrackerEntity");
 
-    public final QAuditableEntity _super = new QAuditableEntity(this);
-
     public final BooleanPath bounced = createBoolean("bounced");
 
     public final DateTimePath<java.util.Date> bouncedDate = createDateTime("bouncedDate", java.util.Date.class);
@@ -43,11 +41,9 @@ public class QCampaignTrackerEntity extends EntityPathBase<CampaignTrackerEntity
 
     public final StringPath clientUserAgent = createString("clientUserAgent");
 
-    //inherited
-    public final NumberPath<Long> createdBy = _super.createdBy;
+    public final NumberPath<Long> createdBy = createNumber("createdBy", Long.class);
 
-    //inherited
-    public final DateTimePath<java.util.Date> createdDateTime = _super.createdDateTime;
+    public final DateTimePath<java.util.Date> createdDateTime = createDateTime("createdDateTime", java.util.Date.class);
 
     public final DateTimePath<java.util.Date> deliverDate = createDateTime("deliverDate", java.util.Date.class);
 
@@ -59,14 +55,11 @@ public class QCampaignTrackerEntity extends EntityPathBase<CampaignTrackerEntity
 
     public final StringPath geoLocationRegion = createString("geoLocationRegion");
 
-    //inherited
-    public final NumberPath<Long> id = _super.id;
+    public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    //inherited
-    public final NumberPath<Long> lastUpdatedBy = _super.lastUpdatedBy;
+    public final NumberPath<Long> lastUpdatedBy = createNumber("lastUpdatedBy", Long.class);
 
-    //inherited
-    public final DateTimePath<java.util.Date> lastUpdatedDateTime = _super.lastUpdatedDateTime;
+    public final DateTimePath<java.util.Date> lastUpdatedDateTime = createDateTime("lastUpdatedDateTime", java.util.Date.class);
 
     public final DateTimePath<java.util.Date> openDate = createDateTime("openDate", java.util.Date.class);
 
@@ -74,8 +67,9 @@ public class QCampaignTrackerEntity extends EntityPathBase<CampaignTrackerEntity
 
     public final StringPath recipient = createString("recipient");
 
-    //inherited
-    public final NumberPath<Long> version = _super.version;
+    public final BooleanPath unsubscribed = createBoolean("unsubscribed");
+
+    public final DateTimePath<java.util.Date> unsubscribedDate = createDateTime("unsubscribedDate", java.util.Date.class);
 
     public QCampaignTrackerEntity(String variable) {
         super(CampaignTrackerEntity.class, forVariable(variable));
