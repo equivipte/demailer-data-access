@@ -30,8 +30,8 @@ public class QueueCampaignMailerEntity extends AuditableEntity {
     @Column(name = "scheduled_send_date")
     private Date scheduledSendDate;
 
-    @Column(name = "mail_delivery_status", length = 1)
-    private MailDeliveryStatus mailDeliveryStatus;
+    @Column(name = "queue_processed", length = 1)
+    private int queueProcessed;
 
 
     public Long getCampaignId() {
@@ -58,14 +58,6 @@ public class QueueCampaignMailerEntity extends AuditableEntity {
         this.recipient = recipient;
     }
 
-    public MailDeliveryStatus getMailDeliveryStatus() {
-        return mailDeliveryStatus;
-    }
-
-    public void setMailDeliveryStatus(MailDeliveryStatus mailDeliveryStatus) {
-        this.mailDeliveryStatus = mailDeliveryStatus;
-    }
-
     public Date getScheduledSendDate() {
         return scheduledSendDate;
     }
@@ -88,6 +80,14 @@ public class QueueCampaignMailerEntity extends AuditableEntity {
 
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    public int getQueueProcessed() {
+        return queueProcessed;
+    }
+
+    public void setQueueProcessed(int queueProcessed) {
+        this.queueProcessed = queueProcessed;
     }
 
     @Override

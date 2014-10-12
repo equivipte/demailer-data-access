@@ -42,7 +42,7 @@ public class QQueueCampaignMailerEntity extends EntityPathBase<QueueCampaignMail
     //inherited
     public final DateTimePath<java.util.Date> lastUpdatedDateTime = _super.lastUpdatedDateTime;
 
-    public final EnumPath<MailDeliveryStatus> mailDeliveryStatus = createEnum("mailDeliveryStatus", MailDeliveryStatus.class);
+    public final NumberPath<Integer> queueProcessed = createNumber("queueProcessed", Integer.class);
 
     public final StringPath recipient = createString("recipient");
 

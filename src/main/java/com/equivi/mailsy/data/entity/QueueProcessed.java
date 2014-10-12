@@ -1,7 +1,7 @@
 package com.equivi.mailsy.data.entity;
 
 
-public enum MailDeliveryStatus {
+public enum QueueProcessed {
 
     PENDING(0),
     SUCCESS(1),
@@ -9,7 +9,7 @@ public enum MailDeliveryStatus {
 
     private Integer status;
 
-    MailDeliveryStatus(Integer status) {
+    QueueProcessed(Integer status) {
         this.status = status;
     }
 
