@@ -24,7 +24,7 @@ public class QueueCampaignMailerEntity extends AuditableEntity {
     @Column(name = "subject")
     private String subject;
 
-    @Column(name = "content")
+    @Column(name = "content" ,length = 500)
     private String content;
 
     @Column(name = "scheduled_send_date")
