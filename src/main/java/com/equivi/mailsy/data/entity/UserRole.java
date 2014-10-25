@@ -1,4 +1,4 @@
-package com.equivi.demailer.data.entity;
+package com.equivi.mailsy.data.entity;
 
 
 import java.util.Arrays;
@@ -6,10 +6,10 @@ import java.util.List;
 
 public enum UserRole {
 
-    DEMAILER_ADMIN(0, "DEMAILER_ADMIN"),
-    DEMAILER_BASIC_USER(1, "DEMAILER_BASIC_USER"),
-    DEMAILER_PROFESSIONAL_USER(2, "DEMAILER_PROFESSIONAL_USER"),
-    DEMAILER_ENTERPRISE_USER(3, "DEMAILER_ENTERPRISE_USER");
+    MAILSY_ADMIN(0, "MAILSY_ADMIN"),
+    MAILSY_BASIC_USER(1, "MAILSY_BASIC_USER"),
+    MAILSY_PROFESSIONAL_USER(2, "MAILSY_PROFESSIONAL_USER"),
+    MAILSY_ENTERPRISE_USER(3, "MAILSY_ENTERPRISE_USER");
 
     private Integer roleId;
 

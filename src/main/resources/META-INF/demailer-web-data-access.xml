@@ -10,7 +10,7 @@
        http://www.springframework.org/schema/data/jpa
        http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-    <context:component-scan base-package="com.equivi.demailer.data"/>
+    <context:component-scan base-package="com.equivi.mailsy.data"/>
 
     <bean id="jpaVendorAdapter"
           class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
@@ -23,10 +23,10 @@
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSourcedEmailerWeb"/>
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
-        <property name="packagesToScan" value="com.equivi.demailer.data"/>
+        <property name="packagesToScan" value="com.equivi.mailsy.data"/>
     </bean>
 
-    <jpa:repositories base-package="com.equivi.demailer.data"
+    <jpa:repositories base-package="com.equivi.mailsy.data"
                       entity-manager-factory-ref="entityManagerFactorydEmailerWeb"/>
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
@@ -39,8 +39,8 @@
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>file:${catalina.home}/conf/demailer/demailer_web_db.properties</value>
-                <value>file:${catalina.home}/conf/demailer/email_setup.properties</value>
+                <value>file:/opt/demailer/conf/demailer_web_db.properties</value>
+                <value>file:/opt/demailer/conf/email_setup.properties</value>
             </list>
         </property>
     </bean>

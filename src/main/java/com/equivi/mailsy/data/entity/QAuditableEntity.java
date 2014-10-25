@@ -1,4 +1,4 @@
-package com.equivi.demailer.data.entity;
+package com.equivi.mailsy.data.entity;
 
 import static com.mysema.query.types.PathMetadataFactory.*;
 
@@ -15,7 +15,7 @@ import com.mysema.query.types.Path;
 @Generated("com.mysema.query.codegen.SupertypeSerializer")
 public class QAuditableEntity extends EntityPathBase<AuditableEntity> {
 
-    private static final long serialVersionUID = -985343958L;
+    private static final long serialVersionUID = 1512586030L;
 
     public static final QAuditableEntity auditableEntity = new QAuditableEntity("auditableEntity");
 

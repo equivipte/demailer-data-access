@@ -1,4 +1,4 @@
-package com.equivi.demailer.data.entity;
+package com.equivi.mailsy.data.entity;
 
 import static com.mysema.query.types.PathMetadataFactory.*;
 
@@ -15,7 +15,7 @@ import com.mysema.query.types.Path;
 @Generated("com.mysema.query.codegen.EntitySerializer")
 public class QSystemStateEntity extends EntityPathBase<SystemStateEntity> {
 
-    private static final long serialVersionUID = -1831417385L;
+    private static final long serialVersionUID = 2087549915L;
 
     public static final QSystemStateEntity systemStateEntity = new QSystemStateEntity("systemStateEntity");
 
