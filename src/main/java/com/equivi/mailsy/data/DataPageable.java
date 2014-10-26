@@ -8,9 +8,8 @@ import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 
-
 @Component
-public class DataPageable implements Serializable{
+public class DataPageable implements Serializable {
 
 
     private static final long serialVersionUID = 7368319039220422153L;
