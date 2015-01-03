@@ -8,6 +8,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "q01_quota")
 public class QuotaEntity extends AuditableEntity {
+    private static final long serialVersionUID = 1462324201030792757L;
+
     @Column(name = "email_verify_quota")
     private long emailVerifyQuota;
 
