@@ -3,6 +3,7 @@ package com.equivi.mailsy.data.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import java.util.Date;
 
@@ -24,7 +25,8 @@ public class QueueCampaignMailerEntity extends AuditableEntity {
     @Column(name = "subject")
     private String subject;
 
-    @Column(name = "content" ,length = 500)
+    @Lob
+    @Column(columnDefinition = "TEXT")
     private String content;
 
     @Column(name = "scheduled_send_date")
